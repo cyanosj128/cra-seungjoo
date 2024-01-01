@@ -8,6 +8,7 @@ module.exports = (env) => {
     output: {
       path: path.join(__dirname, '/dist'),
       filename: 'bundle.js',
+      publicPath: '/',
     },
     module: {
       rules: [
@@ -17,6 +18,11 @@ module.exports = (env) => {
           exclude: /node_modules/,
         },
       ],
+    },
+    devServer: {
+      historyApiFallback: true,
+      open: true,
+      port: 3000,
     },
     plugins: [
       new HtmlWebpackPlugin({
