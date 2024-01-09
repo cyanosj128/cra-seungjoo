@@ -33,7 +33,7 @@ module.exports = (env) => {
         template: './src/index.html',
       }),
       new Dotenv({
-        path: `./.env${env && env.production ? '.production' : ''}`, // Use .env.production for production
+        path: `./.env${env.production === 'true' ? '.production' : ''}`, // Choose the right .env file
       }),
     ],
     resolve: {
